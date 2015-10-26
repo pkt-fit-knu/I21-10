@@ -1,0 +1,131 @@
+
+CREATE TABLE Full_Names
+(
+	First_Name           CHAR(18) NULL,
+	Last_Name            CHAR(18) NULL,
+	Full_Names_id        INTEGER NOT NULL
+);
+
+
+
+
+
+ALTER TABLE Full_Names
+ADD PRIMARY KEY (Full_Names_id);
+
+
+
+CREATE TABLE Masters
+(
+	Title                CHAR(18) NULL,
+	Masters_id           INTEGER NOT NULL,
+	Full_Names_id        INTEGER NULL,
+	Address              CHAR(50) NULL
+);
+
+
+
+
+ALTER TABLE Masters
+ADD PRIMARY KEY (Masters_id);
+
+
+
+CREATE TABLE Masters_Property
+(
+	Masters_id           INTEGER NOT NULL,
+	Propert_id           INTEGER NOT NULL
+);
+
+
+
+ALTER TABLE Masters_Property
+ADD PRIMARY KEY (Masters_id,Propert_id);
+
+
+CREATE TABLE Professions
+(
+	Name                 CHAR(18) NULL,
+	Professions_id       INTEGER NOT NULL,
+	Salary               INTEGER NULL,
+	Number_Workers       INTEGER NULL,
+	Max_Number_Workers   INTEGER NULL
+);
+
+
+ALTER TABLE Professions
+ADD PRIMARY KEY (Professions_id);
+
+
+CREATE TABLE Property
+(
+	Name                 CHAR(18) NULL,
+	Propert_id           INTEGER NOT NULL,
+	Cost                 INTEGER NULL,
+	Type_id              INTEGER NULL
+);
+
+
+ALTER TABLE Property
+ADD PRIMARY KEY (Propert_id);
+
+CREATE TABLE Slaves
+(
+	Slaves_id            INTEGER NOT NULL,
+	Professions_id       INTEGER NULL,
+	Full_Names_id        INTEGER NOT NULL
+);
+
+
+ALTER TABLE Slaves
+ADD PRIMARY KEY (Slaves_id);
+
+
+CREATE TABLE Slaves_Property
+(
+	Propert_id           INTEGER NOT NULL,
+	Slaves_id            INTEGER NOT NULL
+);
+
+ALTER TABLE Slaves_Property
+ADD PRIMARY KEY (Propert_id,Slaves_id);
+
+CREATE TABLE Type_of_Property
+(
+	Type_id              INTEGER NOT NULL,
+	Name                 CHAR(18) NULL
+);
+
+ALTER TABLE Type_of_Property
+ADD PRIMARY KEY (Type_id);
+
+ALTER TABLE Masters
+ADD CONSTRAINT R_12 FOREIGN KEY (Full_Names_id) REFERENCES Full_Names (Full_Names_id);
+
+ALTER TABLE Masters_Property
+ADD CONSTRAINT R_2 FOREIGN KEY (Masters_id) REFERENCES Masters (Masters_id);
+
+
+ALTER TABLE Masters_Property
+ADD CONSTRAINT R_3 FOREIGN KEY (Propert_id) REFERENCES Property (Propert_id);
+
+
+ALTER TABLE Property
+ADD CONSTRAINT R_13 FOREIGN KEY (Type_id) REFERENCES Type_of_Property (Type_id);
+
+ALTER TABLE Slaves
+ADD CONSTRAINT R_9 FOREIGN KEY (Professions_id) REFERENCES Professions (Professions_id);
+
+ALTER TABLE Slaves
+ADD CONSTRAINT R_10 FOREIGN KEY (Full_Names_id) REFERENCES Full_Names (Full_Names_id);
+
+
+ALTER TABLE Slaves_Property
+ADD CONSTRAINT R_6 FOREIGN KEY (Propert_id) REFERENCES Property (Propert_id);
+
+
+ALTER TABLE Slaves_Property
+ADD CONSTRAINT R_5 FOREIGN KEY (Slaves_id) REFERENCES Slaves (Slaves_id);
+
+
+ 
