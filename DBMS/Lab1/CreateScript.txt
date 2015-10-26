@@ -1,4 +1,5 @@
-
+CREATE DATABASE MySlaveSQL;
+\c MySlaveSQL;
 CREATE TABLE Full_Names
 (
 	First_Name           CHAR(18) NULL,

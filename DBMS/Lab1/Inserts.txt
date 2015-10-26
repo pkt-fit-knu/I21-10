@@ -1,0 +1,14 @@
+INSERT INTO Professions(Professions_id, Name, Salary, Number_Workers, Max_Number_Workers) VALUES(1,'Carpenter',50,1,3);
+INSERT INTO Professions(Professions_id, Name, Salary, Number_Workers, Max_Number_Workers) VALUES(2,'Lumberer',15,1,10);
+INSERT INTO Full_Names(Full_Names_id,First_Name, Last_Name) VALUES(1,'Evan', 'Smith');
+INSERT INTO Full_Names(Full_Names_id,First_Name, Last_Name) VALUES(2,'Jon', 'Snow');
+INSERT INTO Full_Names(Full_Names_id,First_Name, Last_Name) VALUES(3,'Jesse', 'Tesla');
+INSERT INTO Type_of_Property(Type_id, Name) VALUES(1,'Tool');
+INSERT INTO Type_of_Property(Type_id, Name) Values(2, 'Luxury');
+INSERT INTO Property(Propert_id, Name, Cost, Type_id) VALUES(1,'Axe',5,1);
+INSERT INTO Property(Propert_id, Name, Cost, Type_id) VALUES(2,'Ring',50,2);
+INSERT INTO Slaves(Slaves_id, Professions_id, Full_Names_id) VALUES(1,2,1);
+INSERT INTO Slaves(Slaves_id, Professions_id, Full_Names_id) VALUES(2,1,2);
+INSERT INTO Slaves_Property(Propert_id, Slaves_id) VALUES(1,1);
+INSERT INTO Masters(Masters_id, Title, Full_Names_id, Address) VALUES(1,'The Powerful',3,'Rome Central st 2');
+INSERT INTO Masters_Property(Masters_id, Propert_id) VALUES(1,2);
