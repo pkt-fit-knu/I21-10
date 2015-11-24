@@ -1,0 +1,84 @@
+<html>
+<head>
+<title>Javascript animation</title>
+<style type="text/css">
+body {
+  background:#99ccff;
+}
+</style>
+<script type="text/javascript">
+
+var imgObj = null; // object
+var imgObj2 = null; // object
+var imgObj3 = null; // object
+var allpics;
+function doMove() {
+  for(var i=0;i<allpics.length;++i)
+  {
+    allpics[i].anglespeed=(Math.sin(allpics[i].angle)*5+7)/20;
+    allpics[i].angle+=allpics[i].anglespeed;
+    
+    allpics[i].imgObj.style.left = allpics[i].centerx+Math.cos(allpics[i].angle)*allpics[i].radius+'px';
+    allpics[i].imgObj.style.top = allpics[i].centery+Math.sin(allpics[i].angle)*allpics[i].radius+'px';
+  }
+  
+  //setTimeout(doMove,20); // call doMove in 20msec
+}
+
+function movingpic(myobj,centerx, centery,radius,angle)
+{
+  
+  this.imgObj=myobj;
+  this.anglespeed=Math.sin(angle)*5+6;
+  this.centerx=centerx;
+  this.centery=centery;
+  this.radius=radius;
+  this.angle=angle;
+  while(angle>2*Math.PI)angle-=2*Math.PI;
+  while(angle<0) angle+=2*Math.PI;
+
+  
+}
+
+function init() {
+  
+  imgObj3 = document.getElementById('img3'); // get the "foo" object
+  imgObj3.style.left = '1000px';
+  imgObj3.style.top='10px'; // set its initial position to 0px
+  imgObj3.style.position= 'absolute';
+  //imgObj.style.top = '0px';
+  imgObj3.style.visibility='visible'; //hidden
+  imgObj2 = document.getElementById('img2'); // get the "foo" object
+  imgObj2.style.left = '1000px';
+  imgObj2.style.top='10px'; // set its initial position to 0px
+  imgObj2.style.position= 'absolute';
+  //imgObj.style.top = '0px';
+  imgObj2.style.visibility='visible'; //hidden
+  imgObj = document.getElementById('img'); // get the "foo" object
+  imgObj.style.left = '10px';
+  imgObj.style.top='10px'; // set its initial position to 0px
+  imgObj.style.position= 'absolute';
+  //imgObj.style.top = '0px';
+  imgObj.style.visibility='visible'; //hidden
+  allpics=[new movingpic(imgObj,300,300,40,0),new movingpic(imgObj2,300,300,40,3*Math.PI/2),new movingpic(imgObj3,300,300,40,Math.PI)];
+  //doMove(); // start animating
+  setInterval(doMove,100);
+}
+
+
+window.onload = init;
+
+</script>
+</head>
+
+<body>
+
+<h1>Javascript animation</h1>
+<h2 id="header">Recursive setTimeout-based animation</h2>
+
+<img id="img" src="penta.png" alt="Mountain View" style="width:25px;height:25px;">
+<img id="img2" src="penta.png" alt="Mountain View" style="width:25px;height:25px;">
+<img id="img3" src="penta.png" alt="Mountain View" style="width:25px;height:25px;">
+
+</body>
+</html>
