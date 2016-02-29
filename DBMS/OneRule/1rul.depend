@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1456242158 source:d:\codeblocks projects\1rul\main.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<cstring>
+	<algorithm>
+	<queue>
+	<cmath>
+	<map>
+
