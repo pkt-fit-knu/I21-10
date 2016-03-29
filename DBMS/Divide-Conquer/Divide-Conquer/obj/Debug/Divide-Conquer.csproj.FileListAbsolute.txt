@@ -1,0 +1,6 @@
+c:\users\grole\documents\visual studio 2013\Projects\Divide-Conquer\Divide-Conquer\bin\Debug\Divide-Conquer.exe.config
+C:\Users\Grole\Documents\Visual Studio 2013\Projects\Divide-Conquer\Divide-Conquer\obj\Debug\Divide-Conquer.csprojResolveAssemblyReference.cache
+C:\Users\Grole\Documents\Visual Studio 2013\Projects\Divide-Conquer\Divide-Conquer\bin\Debug\Divide-Conquer.exe
+C:\Users\Grole\Documents\Visual Studio 2013\Projects\Divide-Conquer\Divide-Conquer\bin\Debug\Divide-Conquer.pdb
+C:\Users\Grole\Documents\Visual Studio 2013\Projects\Divide-Conquer\Divide-Conquer\obj\Debug\Divide-Conquer.exe
+C:\Users\Grole\Documents\Visual Studio 2013\Projects\Divide-Conquer\Divide-Conquer\obj\Debug\Divide-Conquer.pdb
